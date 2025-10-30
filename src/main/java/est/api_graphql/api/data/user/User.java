@@ -12,11 +12,18 @@ public class User {
     private @Column(name = "name") String name;
     private @Column(name = "age") int age;
     private @Column(name = "phone") String phone;
-    private @Column(name = "gender") char gender;
+    private @Column(name = "gender") Gender gender;
+
+    private enum Gender{
+        MASUCULINO,
+        FEMININO,
+        OUTRO
+    }
+
 
     User(){}
 
-    public User(String name, String email, int age, String phone, char gender){
+    public User(String name, String email, int age, String phone, Gender gender){
         this.name = name;
         this.email = email;
         this.age = age;
@@ -44,7 +51,7 @@ public class User {
         return phone;
     }
 
-    public char getGender() {
+    public Gender getGender() {
         return gender;
     }
 
@@ -64,7 +71,7 @@ public class User {
         this.email = email;
     }
 
-    public void setGender(char gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -78,3 +85,5 @@ public class User {
     }
 
 }
+
+

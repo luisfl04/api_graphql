@@ -1,0 +1,13 @@
+type User{
+    fullEmail: String
+}
+
+enum Gender{
+    MASCULINO,
+    FEMININO,
+    OUTRO,
+}
+
+type Query{
+    searchUserById(id: ID!): User
+}
