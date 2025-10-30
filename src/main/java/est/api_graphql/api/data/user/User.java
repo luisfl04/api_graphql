@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name="User")
+@Table(name = "tb_users")
 public class User {
 
     private @Id @GeneratedValue @Column(name = "id") Long id;
@@ -16,7 +16,7 @@ public class User {
 
     User(){}
 
-    User(String name, String email, int age, String phone, char gender){
+    public User(String name, String email, int age, String phone, char gender){
         this.name = name;
         this.email = email;
         this.age = age;
