@@ -1,13 +1,61 @@
+# Esquema para manipulação das entidades 'User' e 'Order'. Visa usar todos os
+# recursos do graphQL
+
+
+"""
+Objeto que representa a entidade 'User' da aplicação
+"""
 type User{
-    fullEmail: String
+    id: ID!,
+    fullName: String!
+    email: String
+    age: Int,
+    phone: String!
+    gender: GenderValues!
 }
 
-enum Gender{
-    MASCULINO,
-    FEMININO,
-    OUTRO,
+
+"""
+Enum de valores usados pelo InputObeject 'GenderInput'
+"""
+enum GenderValues {
+    MASCULINO
+    FEMININO
+    OUTRO
 }
 
+"""
+Objeto usado para a criação de 'Users' na aplicação
+"""
+input UserCreateInput{
+    first_name: String!
+    last_name: String,
+    email: String,
+    age: Int!,
+    phone: String!,
+    gender: GenderValues!
+}
+
+"""
+Queries implementadas para o objeto 'User'
+"""
 type Query{
+    searchAllUsers: [User!]
     searchUserById(id: ID!): User
 }
+
+"""
+Mutations implementadas para o objeto 'User'
+"""
+type Mutation {
+    createUser(newUser: UserCreateInput!): User
+    updateEmailUser(id: ID!, email: String!): User
+}
+
+
+# Interfaces implementadas:
+
+# Unions implementadas:
+
+
+

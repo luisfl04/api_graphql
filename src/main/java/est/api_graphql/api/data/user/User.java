@@ -7,23 +7,19 @@ import jakarta.persistence.*;
 @Table(name = "tb_users")
 public class User {
 
-    enum Gender{
-        MASUCULINO,
-        FEMININO,
-        OUTRO
-    }
-
     private @Id @GeneratedValue @Column(name = "id") Long id;
     private @Column(name = "email", unique = true) String email;
-    private @Column(name = "name") String name;
+    private @Column(name = "first_name") String first_name;
+    private @Column(name = "last_name") String last_name;
     private @Column(name = "age") int age;
     private @Column(name = "phone") String phone;
 
     private @Column(name = "gender") Gender gender;
 
     User(){}
-    public User(String name, String email, int age, String phone, Gender gender){
-        this.name = name;
+    public User(String first_name, String last_name, String email, int age, String phone, Gender gender){
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.email = email;
         this.age = age;
         this.phone = phone;
@@ -34,8 +30,12 @@ public class User {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return first_name;
+    }
+
+    public String getLastName() {
+        return last_name;
     }
 
     public String getEmail() {
@@ -62,8 +62,12 @@ public class User {
         this.age = age;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public void setLastName(String last_name) {
+        this.last_name = last_name;
     }
 
     public void setEmail(String email) {
@@ -80,7 +84,7 @@ public class User {
 
     @Override
     public String toString(){
-        return  "User -> [id: " + this.id + ", name: " + this.name + ", email: " + this.email + "]";
+        return  "User -> [id: " + this.id + ", first_name: " + this.first_name + ", email: " + this.email + "]";
     }
 
 }

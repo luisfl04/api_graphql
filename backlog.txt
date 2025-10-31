@@ -6,7 +6,7 @@
     1.5 - Obter determinado cliente GraphQL para teste -> Ok
 
 2 - Refinamento do serviço GraphQL ->
-    2.1 - Adicionar mais entidades a aplicação(Com relacionamento entre elas) ->
+    2.1 - Adicionar mais entidades a aplicação(Com relacionamento entre elas) -> Ok
     2.2 - Criar todos os tipos de objetos que graphql suporte no esquema ->
         2.2.1 - Queries aninhadas ->
         2.2.2 - Mutations ->
