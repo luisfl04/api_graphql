@@ -7,22 +7,21 @@ import jakarta.persistence.*;
 @Table(name = "tb_users")
 public class User {
 
-    private @Id @GeneratedValue @Column(name = "id") Long id;
-    private @Column(name = "email", unique = true) String email;
-    private @Column(name = "name") String name;
-    private @Column(name = "age") int age;
-    private @Column(name = "phone") String phone;
-    private @Column(name = "gender") Gender gender;
-
-    private enum Gender{
+    enum Gender{
         MASUCULINO,
         FEMININO,
         OUTRO
     }
 
+    private @Id @GeneratedValue @Column(name = "id") Long id;
+    private @Column(name = "email", unique = true) String email;
+    private @Column(name = "name") String name;
+    private @Column(name = "age") int age;
+    private @Column(name = "phone") String phone;
+
+    private @Column(name = "gender") Gender gender;
 
     User(){}
-
     public User(String name, String email, int age, String phone, Gender gender){
         this.name = name;
         this.email = email;
