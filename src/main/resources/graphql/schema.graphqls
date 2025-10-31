@@ -49,8 +49,8 @@ Mutations implementadas para o objeto 'User'
 type Mutation {
     createUser(newUser: UserCreateInput!): User
     updateEmailUser(id: ID!, email: String!): User
+    deleteUser(id: ID!): String
 }
-
 
 # Interfaces implementadas:
 

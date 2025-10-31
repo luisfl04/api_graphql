@@ -36,15 +36,17 @@ class UserController {
     @MutationMapping
     public User updateEmailUser(@Argument Long id, @Argument String email){
         User user = repository.findById(id).orElseThrow();
+
         user.setEmail(email);
+
         return repository.save(user);
     }
 
-
-//    public User updateUser(){};
-//
-//    public User deleteUser();
-
+    @MutationMapping
+    public String deleteUser(@Argument Long id){
+        repository.deleteById(id);
+        return "User deleted!";
+    }
 
     @SchemaMapping(typeName = "User", field = "fullName")
     public String getFullName(User user){
