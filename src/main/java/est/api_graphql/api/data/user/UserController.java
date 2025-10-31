@@ -37,7 +37,7 @@ class UserController {
     public User updateEmailUser(@Argument Long id, @Argument String email){
         User user = repository.findById(id).orElseThrow();
         user.setEmail(email);
-        return user;
+        return repository.save(user);
     }
 
 

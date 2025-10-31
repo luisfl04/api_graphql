@@ -1,0 +1,14 @@
+mutation UpdateEmailUser ($id: ID!, $email: String!) {
+    updateEmailUser(id: $id, email: $email){
+        id,
+        fullName,
+        email,
+        age
+    }
+}
+
+mutation CreateUser($user: UserCreateInput!){
+    createUser(newUser: $user){
+        email
+    }
+}
